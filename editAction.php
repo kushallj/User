@@ -6,25 +6,23 @@ if (isset($_POST['update'])) {
 	// Escape special characters in a string for use in an SQL statement
 	$id = mysqli_real_escape_string($mysqli, $_POST['id']);
 	$name = mysqli_real_escape_string($mysqli, $_POST['name']);
-	$age = mysqli_real_escape_string($mysqli, $_POST['age']);
+	$Skillset = mysqli_real_escape_string($mysqli, $_POST['Skillset']);
 	$email = mysqli_real_escape_string($mysqli, $_POST['email']);	
 	
 	// Check for empty fields
-	if (empty($name) || empty($age) || empty($email)) {
+	if (empty($name) || empty($Skillset) ) {
 		if (empty($name)) {
 			echo "<font color='red'>Name field is empty.</font><br/>";
 		}
 		
-		if (empty($age)) {
-			echo "<font color='red'>Age field is empty.</font><br/>";
+		if (empty($Skillset)) {
+			echo "<font color='red'>Skillset field is empty.</font><br/>";
 		}
 		
-		if (empty($email)) {
-			echo "<font color='red'>Email field is empty.</font><br/>";
-		}
+		
 	} else {
 		// Update the database table
-		$result = mysqli_query($mysqli, "UPDATE users SET `name` = '$name', `age` = '$age', `email` = '$email' WHERE `id` = $id");
+		$result = mysqli_query($mysqli, "UPDATE users SET `name` = '$name', `Skillset` = '$Skillset',  WHERE `id` = $id");
 		
 		// Display success message
 		echo "<p><font color='green'>Data updated successfully!</p>";

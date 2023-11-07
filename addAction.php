@@ -11,22 +11,20 @@ require_once("dbConnection.php");
 if (isset($_POST['submit'])) {
 	// Escape special characters in string for use in SQL statement	
 	$name = mysqli_real_escape_string($mysqli, $_POST['name']);
-	$age = mysqli_real_escape_string($mysqli, $_POST['age']);
+	$Skillset = mysqli_real_escape_string($mysqli, $_POST['Skillset']);
 	$email = mysqli_real_escape_string($mysqli, $_POST['email']);
 		
 	// Check for empty fields
-	if (empty($name) || empty($age) || empty($email)) {
+	if (empty($name) || empty($Skillset) || empty($email)) {
 		if (empty($name)) {
 			echo "<font color='red'>Name field is empty.</font><br/>";
 		}
 		
-		if (empty($age)) {
-			echo "<font color='red'>Age field is empty.</font><br/>";
+		if (empty($Skillset)) {
+			echo "<font color='red'>Skillset field is empty.</font><br/>";
 		}
 		
-		if (empty($email)) {
-			echo "<font color='red'>Email field is empty.</font><br/>";
-		}
+		
 		
 		// Show link to the previous page
 		echo "<br/><a href='javascript:self.history.back();'>Go Back</a>";
@@ -34,7 +32,7 @@ if (isset($_POST['submit'])) {
 		// If all the fields are filled (not empty) 
 
 		// Insert data into database
-		$result = mysqli_query($mysqli, "INSERT INTO users (`name`, `age`, `email`) VALUES ('$name', '$age', '$email')");
+		$result = mysqli_query($mysqli, "INSERT INTO users (`name`, `Skillset`, `email`) VALUES ('$name', '$Skillset')");
 		
 		// Display success message
 		echo "<p><font color='green'>Data added successfully!</p>";
