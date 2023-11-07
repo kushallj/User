@@ -13,7 +13,7 @@ $resultData = mysqli_fetch_assoc($result);
 
 $name = $resultData['name'];
 $age = $resultData['age'];
-$email = $resultData['email'];
+
 ?>
 <html>
 <head>	

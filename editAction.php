@@ -22,7 +22,9 @@ if (isset($_POST['update'])) {
 		
 	} else {
 		// Update the database table
-		$result = mysqli_query($mysqli, "UPDATE users SET `name` = '$name', `Skillset` = '$Skillset',  WHERE `id` = $id");
+		// Update the database table
+           $result = mysqli_query($mysqli, "UPDATE users SET `name` = '$name', `Skillset` = '$Skillset' WHERE `id` = $id");
+
 		
 		// Display success message
 		echo "<p><font color='green'>Data updated successfully!</p>";

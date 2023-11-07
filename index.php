@@ -20,7 +20,7 @@ $result = mysqli_query($mysqli, "SELECT * FROM users ORDER BY id DESC");
 		<tr bgcolor='#DDDDDD'>
 			<td><strong>Name</strong></td>
 			<td><strong>Skillset</strong></td>
-			
+			<td><strong>lastUpdated</strong></td>
 			<td><strong>Action</strong></td>
 		</tr>
 		<?php
@@ -29,7 +29,7 @@ $result = mysqli_query($mysqli, "SELECT * FROM users ORDER BY id DESC");
 			echo "<tr>";
 			echo "<td>".$res['name']."</td>";
 			echo "<td>".$res['Skillset']."</td>";
-			
+			echo "<td>".$res['lastUpdated']."</td>";
 			echo "<td><a href=\"edit.php?id=$res[id]\">Edit</a> | 
 			<a href=\"delete.php?id=$res[id]\" onClick=\"return confirm('Are you sure you want to delete?')\">Delete</a></td>";
 		}

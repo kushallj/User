@@ -19,6 +19,10 @@
 				<td>Skillset</td>
 				<td><input type="text" name="Skillset"></td>
 			</tr>
+			<tr> 
+                <td>Last Updated</td>
+                <td><input type="hidden" name="lastUpdated" value="<?php echo date('Y-m-d H:i:s'); ?>"></td>
+            </tr>
 			
 			<tr> 
 				<td></td>
