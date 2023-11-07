@@ -16,7 +16,7 @@
 				<td><input type="text" name="name"></td>
 			</tr>
 			<tr> 
-				<td>Skill</td>
+				<td>Skillset</td>
 				<td><input type="text" name="Skillset"></td>
 			</tr>
 			
